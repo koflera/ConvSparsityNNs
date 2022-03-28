@@ -15,7 +15,7 @@ The code contains an implementation of an iterative network which uses convoluti
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/koflera/ConvSparsityNNs/main?labpath=basic_example.ipynb)
 
-Further, we provide an example of toy-data which can be used to get familiar with the code. 
+We provide an example of toy-data which can be used to get construct the data-acquisition model 
 - img_320.npy:    -  the ground-truth image x
 - ktraj_320.npy:  -  a set of k-space trajectories chosen according to the golden-angle method
 - dcomp_320.npy:  -  the values of the employed density-compensation function
@@ -31,9 +31,13 @@ This can in principle be circumvented by upgrading to the newest TorchKbNufft ve
 
 ## Application of a previously trained network
 
+Load a model and use the network to reconstruct images:
+
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/koflera/ConvSparsityNNs/main?labpath=nn_caol_test.ipynb)
 
 ## Comparison between filters obtained by de-coupled pre-training vs. end-to-end trained filters
+
+Compare the performance of the reconstruction network when the used sparsifying filters were obtained by de-coupled pre-training (i.e. without including the data-acquisition model in the learning process) to one where the sparsifying filters were obtained by supervised end-to-end training.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/koflera/ConvSparsityNNs/main?labpath=nn_caol_test.ipynb)
 
