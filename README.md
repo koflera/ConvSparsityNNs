@@ -17,7 +17,9 @@ https://arxiv.org/abs/2203.02166
 
 https://arxiv.org/abs/2206.04447
 
-The repository contains an implementation of both iterative network which uses convolutional sparsifying transforms. 
+The repository contains an implementation of both iterative networks which use convolutional sparsifying transforms.
+NN-CAOL uses the "anyalysis" concept of sparsity, i.e. z=Hx is sparse, where x is an image and H is the convolutional sparsifying transform, while NN-CDL uses the synthesis approach, i.e. x = Ds, where the image x is generated from a set of convolutional filters D and a set of sparse codes s.
+
 The networks can be used to learn the filters by end-to-end training.
 
 ## Generating the data-acquisition model
