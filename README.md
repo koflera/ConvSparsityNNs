@@ -12,7 +12,9 @@ by A. Kofler, C. Wald,  T. Schaeffter, M. Haltmeier, C. Kolbitsch.
 The papers are published in the proceedings of the IEEE ISBI 2022 conference and the IEEE EUSIPCO 2022 conference, respectively. 
 
 Also, the accepted version of the paper can be found below:
+
 https://arxiv.org/abs/2203.02166
+
 https://arxiv.org/abs/2206.04447
 
 The repository contains an implementation of both iterative network which uses convolutional sparsifying transforms. 
