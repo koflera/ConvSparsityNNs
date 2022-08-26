@@ -5,11 +5,13 @@ import torch.nn.functional as F
 
 import numpy as np
 
+import sys
+sys.path.append('../')
 
-from .activation_funcs import ApproxSoftShrinkAct
+from utils.activation_funcs import ApproxSoftShrinkAct
 
-from .conjugate_gradient import conj_grad
-from .padding_funcs import pad_circular_nd
+from utils.conjugate_gradient import conj_grad
+from utils.padding_funcs import pad_circular_nd
 
 class ConvAnaOpLearningCNN(nn.Module):
 
@@ -87,7 +89,7 @@ class ConvAnaOpLearningCNN(nn.Module):
 		#concatenate filters
 		h_filter = torch.cat(2*[self.h_filter_half],dim=0)
 		
-		hx = F.conv3d(pad_circular_nd(x, self.npad, dim=[2,3,4]), 
+		hx = F.conv3d(pad_circular_nd(x, [self.npad for kd in range(3)], dim=[2,3,4]), 
 					h_filter, 
 					bias=None,
 					padding=self.npad, 
@@ -103,7 +105,7 @@ class ConvAnaOpLearningCNN(nn.Module):
 		#concatenate filters
 		h_filter = torch.cat(2*[self.h_filter_half],dim=0)
 		
-		hTz = F.conv_transpose3d(pad_circular_nd(z, self.npad, dim=[2,3,4]), 
+		hTz = F.conv_transpose3d(pad_circular_nd(z, [self.npad for kd in range(3)], dim=[2,3,4]), 
 					h_filter, 
 					bias=None,
 					padding=self.npad, 

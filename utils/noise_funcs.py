@@ -9,6 +9,7 @@ def add_gaussian_noise(kdata,sigma=0.02):
 													
 	"""
 	np.random.seed(0)
+	torch.manual_seed(0)
 	
 	#the deivice on which the k-space data is located;
 	device = kdata.device

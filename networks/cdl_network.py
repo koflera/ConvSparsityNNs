@@ -429,4 +429,16 @@ class ConvDicoLearningCNN(nn.Module):
 			x = conj_grad(self.apply_HOperator, x, rhs, niter=self.npcg)
 		
 		return x
+	
+def cdl_unit_norm_projector(model):
+	
+	"""
+	function for projecting the filters on the unit sphere. 
+	
+	"""
+	with torch.no_grad():
+		
+		n_filters_half=model.h_filter_half.shape[0]
+		for kf in range(n_filters_half):
+			model.d_filter_half[kf,...].div_(torch.norm(model.d_filter_half[kf,...].flatten(), p=2, keepdim=True))
 		
