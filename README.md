@@ -52,7 +52,7 @@ Load the NN-CAOL model and use the network to reconstruct images:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/koflera/ConvSparsityNNs/main?labpath=nn_caol_test.ipynb)
 
-## Comparison between the filters obtained by de-coupled (CAOL) pre-training vs. end-to-end trained filters (NN-CAOL)
+## Comparison between the filters obtained by de-coupled pre-training (CAOL) vs. end-to-end trained filters (NN-CAOL)
 
 Compare the performance of the reconstruction network when the used sparsifying filters were obtained by de-coupled pre-training (i.e. without including the data-acquisition model in the learning process) to the one where the sparsifying filters were obtained by supervised end-to-end training.
 
